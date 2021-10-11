@@ -18,8 +18,8 @@
 // });
 
 export const fetchPhotoFunc = async (name) => {
-  const response = await fetch(`https://pixabay.com/api/?key=23801243-e85441bee56b02cd6046c9902&q=${name}&image_type=photo&orientation=horizontal&safesearch=true`)
-      if (response.status >= 200 && response.status < 300) {
+  const response = await fetch(`https://pixabay.com/api/?key=23779410-abe809331958b49ace969e642&q=${name}&image_type=photo&orientation=horizontal&safesearch=true`)
+  if (response.status >= 200 && response.status < 300) {
         const users = await response.json();
         return users;
       }

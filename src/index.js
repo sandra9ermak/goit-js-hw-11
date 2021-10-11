@@ -1,5 +1,5 @@
 //import { url } from "./fetchFunction";
-import { templateString, galleryAddItems } from "./templateString";
+import { templateString } from "./templateString";
 import Notiflix from "notiflix";
 import { fetchPhotoFunc } from './fetchFunction';
 
@@ -9,7 +9,7 @@ const input = document.querySelector('input');
 
 const array = [];
 
-form.addEventListener('submit', event => {
+input.addEventListener('submit', event => {
     event.preventDefault;
     const inputText = input.value;
     fetchPhotoFunc(inputText)
