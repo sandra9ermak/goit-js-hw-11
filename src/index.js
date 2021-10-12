@@ -38,7 +38,5 @@ buttonLoadMore.addEventListener('click', async event => {
   if (page >= parseInt(photo.totalHits / limit)) {
     buttonLoadMore.classList.add('button-hiden');
     Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
-  } else {
-    templateStringFunc(photo);
   }
 });
