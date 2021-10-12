@@ -5,8 +5,7 @@ export const gallery = document.querySelector('.gallery');
 const lightbox = new SimpleLightbox('.gallery a');
 
 export const templateStringFunc = (photo => {
-    console.log(photo);
-    const markup = photo.data.hits.map(item => {
+    const markup = photo.hits.map(item => {
         return `<div class="photo-card">
                 <a href="${item.largeImageURL}">
                     <img src="${item.webformatURL}" alt="${item.tags}" loading="lazy" class="webformatURL-cl"/>
@@ -27,10 +26,10 @@ export const templateStringFunc = (photo => {
                     </div>
                 </div>`;
     }).join('');
-    gallery.innerHTML = markup;
+    gallery.insertAdjacentHTML('beforeend', markup);
     
     lightbox.refresh();
-    
+
     const { height: cardHeight } = document
       .querySelector(".gallery")
       .firstElementChild.getBoundingClientRect();
