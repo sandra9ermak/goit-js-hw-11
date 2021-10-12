@@ -34,6 +34,7 @@ form.addEventListener('submit', async event => {
 buttonLoadMore.addEventListener('click', async event => {
   page++;
   const photo = await fetchPhotoFunc(input.value, page);
+  templateStringFunc(photo);
   if (page >= parseInt(photo.totalHits / limit)) {
     buttonLoadMore.classList.add('button-hiden');
     Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
