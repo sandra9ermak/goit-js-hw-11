@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,gBACE,wBAAkC,CAClC,WACF","file":"styles.ecf2d9cc.css","sourceRoot":"../src","sourcesContent":[".header-content {\n  background-color: rgb(77, 77, 214);\n  height: 50px;\n}\n"]}
