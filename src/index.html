@@ -15,17 +15,20 @@
 
   <body>
 
-    <header class="header-content">
-      <form class="search-form" id="search-form">
-        <input type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
-        <button type="submit">Search</button>
-      </form>
+    <header class="container header">
+      <div class="div-header">
+        <form class="search-form" id="search-form">
+          <input class="inputText" type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+          <button type="submit" class="styleOfSearchButton">Search</button>
+        </form>
+      </div>      
     </header>
 
-    <main class="main-content">
+    <main class="main-content container">
       <div class="gallery">
         <!-- Карточки изображений -->
       </div>
+      <button type="button" class="load-more">Load more</button>
     </main>
 
 

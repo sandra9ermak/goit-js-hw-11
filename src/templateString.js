@@ -1,34 +1,44 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-export const templateString = (photo => {
-    const gallery = document.querySelector('.gallery');
-    const markup = photo.map(item => {
+export const gallery = document.querySelector('.gallery');
+const lightbox = new SimpleLightbox('.gallery a');
+
+export const templateStringFunc = (photo => {
+    console.log(photo);
+    const markup = photo.data.hits.map(item => {
         return `<div class="photo-card">
                 <a href="${item.largeImageURL}">
-                <img src="${item.webformatURL}" alt="${item.name}" loading="lazy" />
+                    <img src="${item.webformatURL}" alt="${item.tags}" loading="lazy" class="webformatURL-cl"/>
                 </a>
                     <div class="info">
                         <p class="info-item">
-                            <b>Likes${item.likes}</b>
+                            <b class="info-item-value">Likes</b>${item.likes}
                         </p>
                         <p class="info-item">
-                            <b>Views${item.views}</b>
+                            <b class="info-item-value">Views</b>${item.views}
                         </p>
                         <p class="info-item">
-                            <b>Comments${item.comments}</b>
+                            <b class="info-item-value">Comments</b>${item.comments}
                         </p>
                         <p class="info-item">
-                            <b>Downloads${item.downloads}</b>
+                            <b class="info-item-value">Downloads</b>${item.downloads}
                         </p>
                     </div>
-                </div>`
+                </div>`;
     }).join('');
     gallery.innerHTML = markup;
-});     
-        
-const lightbox = new SimpleLightbox('.gallery a', {
-    captions: true,
-    captionsData: "alt",
-    captionDelay: 250
+    
+    lightbox.refresh();
+    
+    const { height: cardHeight } = document
+      .querySelector(".gallery")
+      .firstElementChild.getBoundingClientRect();
+    
+    window.scrollBy({
+      top: cardHeight * 2,
+      behavior: "smooth",
+    });
 });
+
+        

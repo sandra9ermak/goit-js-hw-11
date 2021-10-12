@@ -1,3 +1,4 @@
+import axios from "axios";
 // export const searchParams = new URLSearchParams({
 //   image_type: photo,
 //   orientation: horizontal,
@@ -17,11 +18,11 @@
 //     .then(data => res(data));
 // });
 
-export const fetchPhotoFunc = async (name) => {
-  const response = await fetch(`https://pixabay.com/api/?key=23779410-abe809331958b49ace969e642&q=${name}&image_type=photo&orientation=horizontal&safesearch=true`)
-  if (response.status >= 200 && response.status < 300) {
-        const users = await response.json();
-        return users;
+export const fetchPhotoFunc = async (name, page) => {
+  const response = await axios.get(`https://pixabay.com/api/?key=23779410-abe809331958b49ace969e642&q=${name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`)
+      if (response.status >= 200 && response.status < 300) {
+        return response;
       }
-      else return Promise.reject('Requst error');
+      else return Promise.reject('error request');
+        //throw new Error(Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again."))
 };

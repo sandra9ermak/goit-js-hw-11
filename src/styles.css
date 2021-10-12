@@ -1,4 +1,98 @@
-.header-content {
+.div-header {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
   background-color: rgb(77, 77, 214);
-  height: 50px;
+}
+
+.container {
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.inputText {
+  border-radius: 4px;
+  padding: 5px 5px;
+}
+
+.styleOfSearchButton {
+  background-color: #eee;
+  padding: 5px 20px;
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.styleOfSearchButton:hover,
+.styleOfSearchButton:focus {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 1px 1px 1px rgb(0, 0, 0);
+}
+
+.photo-card {
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.photo-card:hover,
+.photo-card:focus {
+  box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+.webformatURL-cl {
+  width: 300px;
+  height: 200px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+.info-item {
+  text-align: center;
+  font-size: 14px;
+}
+
+.info-item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.info-item-value {
+  font-weight: 500;
+  display: block;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.button-hiden {
+  display: none;
+}
+
+.styleOfButton {
+  background-color: rgb(77, 77, 214);
+  padding: 8px 20px;
+  color: #eee;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.styleOfButton:hover,
+.styleOfButton:focus {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5), 1px 1px 1px rgb(0, 0, 0);
 }
